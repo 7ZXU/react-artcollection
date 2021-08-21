@@ -1,10 +1,11 @@
 /*eslint-disable*/ 
 
 import logo from './logo.svg';
-import {Navbar, Nav, Form, Button, FormControl, Jumbotron} from 'react-bootstrap'
+import {Navbar, Nav, Form, Button, FormControl, Jumbotron, Container, Col, Row} from 'react-bootstrap'
 import './App.css';
 import CollectionData from './data'
 import React, {useState} from 'react'
+import { Link, Route, Switch } from 'react-router-dom'
 
 
 function App() {
@@ -16,6 +17,10 @@ function App() {
 
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">Design Collection</Navbar.Brand>
+      <Nav className="mr-auto"> 
+        <Nav.Link as={Link} to={'/'}>Home</Nav.Link>
+
+      </Nav>
 
     </Navbar>
 
@@ -31,15 +36,12 @@ function App() {
     </Jumbotron>
 
       {/* 아트 디자인 수집 목록*/}
-      <div className="container">
-        <div className="row">
+      <div className = "container">
           {
-            art.map(
-              (a, i) => { // a는 art // i는 숫자
+            art.map((a, i) => { // a는 art // i는 숫자
                 return <Card art={a} i={i} key={i}/> // key 는 리액트에서 요소 구분을 위해 필요
               })
           }
-        </div>
       </div>
 
     </div>
@@ -50,8 +52,8 @@ function App() {
 function Card(props){
   return( 
     // 열을 네개로 나눔
-      <div className="col-md-4">
-        <img src={'../artimg/artimg_'+(props.i+1)+'.jpg'} width="100%" height="100%" /> 
+      <div className="item">
+        <img src={'../artimg/artimg_'+(props.i+1)+'.jpg'} width="50px" height="90px"/> 
         <h4>{props.art.title}</h4>
         <p>{props.art.content}</p>
       </div>    
