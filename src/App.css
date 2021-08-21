@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.background {
+  background-image: url('https://i.pinimg.com/originals/a1/09/5b/a1095b9d16a0f05582dfba76c88f16dc.jpg');
+  background-position: center;
+  color : white
+}
+
+.marg {
+  margin-top: 50px;
+  margin-left: 50px;
+}
