@@ -19,8 +19,12 @@ function App() {
       <Navbar.Brand href="#home">Design Collection</Navbar.Brand>
       <Nav className="mr-auto"> 
         <Nav.Link as={Link} to={'/'}>Home</Nav.Link>
-
       </Nav>
+      <Form inline>
+        <FormControl type="text" placeholder="Search" className="mr-sm-2"/>
+        <Button type="search">Search</Button>
+
+      </Form>
 
     </Navbar>
 
