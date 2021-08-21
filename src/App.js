@@ -1,11 +1,11 @@
 /*eslint-disable*/ 
 
-import logo from './logo.svg';
 import {Navbar, Nav, Form, Button, FormControl, Jumbotron, Container, Col, Row} from 'react-bootstrap'
 import './App.css';
 import CollectionData from './data'
 import React, {useState} from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
+import Detail from './Detail'
 
 
 function App() {
@@ -19,15 +19,16 @@ function App() {
       <Navbar.Brand href="#home">Design Collection</Navbar.Brand>
       <Nav className="mr-auto"> 
         <Nav.Link as={Link} to={'/'}>Home</Nav.Link>
+        <Nav.Link as={Link} to={'/detail'}>Detail</Nav.Link>
       </Nav>
       <Form inline>
         <FormControl type="text" placeholder="Search" className="mr-sm-2"/>
         <Button type="search">Search</Button>
-
       </Form>
 
     </Navbar>
 
+    <Route exact path="/">
     <Jumbotron className = "background">
     <h1>Hello, JoyCoding!</h1>
     <p>
@@ -47,6 +48,11 @@ function App() {
               })
           }
       </div>
+      </Route>
+
+      <Route path="/detail">
+        <Detail art={art}/>
+      </Route>
 
     </div>
   );
